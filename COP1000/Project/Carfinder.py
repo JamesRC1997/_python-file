@@ -6,11 +6,17 @@ def print_menu():
     print("********************************")
     print("Please Enter the following number below from the following menu:")
     print("1. PRINT all Authorized Vehicles")
-    print("2. Exit")
+    print("2. SEARCH for Authorized Vehicles")
+    print("3. Exit")
 def print_vehicles():
     print("\nThe AutoCountry sales manager has authorized the purchase and selling of the following vehicles:")
     for vehicle in AllowedVehiclesList:
         print(vehicle)
+def search_vehicle(vehicle_name):
+    if vehicle_name in AllowedVehiclesList:
+        print(f"{vehicle_name} is an authorized vehicle")
+    else:
+        print(f"{vehicle_name} is not an authorized vehicle, if you received this in error please check the spelling and try again")
 
 def main():
     while True:
@@ -19,6 +25,9 @@ def main():
         if choice == '1':
             print_vehicles()
         elif choice == '2':
+            vehicle_name = input("Please Enter the full Vehicle name:\n")
+            search_vehicle(vehicle_name)
+        elif choice == '3':
             print("Thank you for using the AutoCountry Vehicle Finder, good-bye!")
             break
         else:
