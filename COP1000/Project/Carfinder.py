@@ -1,15 +1,15 @@
 #Project for the program called Carfinder
 def load_vehicles_from_file():
     try:
-        with open("AllowedVehicleList.txt", 'r') as file:
+        with open("C:\_python file\COP1000\Project\AllowedVehicleList.txt", 'r') as file:
             vehicles = [line.strip() for line in file.readlines()]
         return vehicles
     except FileNotFoundError:
-        print("Error: AllowedVehicleList.txt not found.")
+        print("Error: C:\_python file\COP1000\Project\AllowedVehicleList.txt not found.")
         return []
 
 def save_vehicle_to_file(vehicle_name):
-    with open("AllowedVehicleList.txt", 'a') as file:
+    with open("C:\_python file\COP1000\Project\AllowedVehicleList.txt", 'a') as file:
         file.write(f"{vehicle_name}\n")
 
 def print_menu():
